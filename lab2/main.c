@@ -1,0 +1,1 @@
+#include <stdio.h>//#include <sys/syscall.h>//#include <unistd.h>int main(int argc,char* argv[]) {    int b = syscall(323,2);    int a = syscall(324,argv[1],argv[2]);    printf("%d   %d   \n",b,a);    return 0;}
