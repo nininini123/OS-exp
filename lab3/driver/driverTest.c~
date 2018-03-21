@@ -16,7 +16,7 @@ ssize_t my_write(struct file *file, const char __user *user, size_t t, loff_t *f
  
 char message[MAX_SIZE] = "this is a origin message";
 int device_num;//设备号
-char* devName = "lgsDrive";//设备名
+char* devName = "driverTest";//设备名
  
 struct file_operations pStruct =
 { 

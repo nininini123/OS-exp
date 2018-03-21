@@ -15,8 +15,8 @@ int main(void)
  
 	char dir[50] = "/dev/driverTest";
  
+ 		
 	fd = open(dir, O_RDWR | O_NONBLOCK);
- 
 	if (fd != -1)
 	{
 		//读初始信息
@@ -40,4 +40,5 @@ int main(void)
 		printf("Device open failed\n");
 		return -1;
 	}
+
 }

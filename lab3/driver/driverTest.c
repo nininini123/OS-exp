@@ -34,12 +34,12 @@ int init_module()
 	ret = register_chrdev(0, devName, &pStruct);
 	if (ret < 0)
 	{
-		printk("failed to register_chrdev.\n");
+		printk("failed to register driverTest .\n");
 		return -1;
 	}
 	else
 	{
-		printk("the lgsDrive has been registered!\n");
+		printk("driverTest has been registered!\n");
 		printk("id: %d\n", ret);
 		device_num = ret;
  
@@ -51,14 +51,14 @@ int init_module()
 void cleanup_module()
 {
 	unregister_chrdev(device_num, devName);
-	printk("unregister successful.\n");
+	printk("unregister driverTest successful.\n");
 }
  
  
 //打开
 int my_open(struct inode *inode, struct file *file)
 {
-	printk("open lgsDrive OK!\n");
+	printk("open driverTest OK!\n");
 	try_module_get(THIS_MODULE);
 	return 0;
 }
@@ -66,7 +66,7 @@ int my_open(struct inode *inode, struct file *file)
 //关闭
 int my_release(struct inode *inode, struct file *file)
 {
-	printk("Device released!\n");
+	printk("Device driverTest released!\n");
 	module_put(THIS_MODULE);
  
 	return 0;

@@ -51,8 +51,10 @@ void MainWindow::updateCPU()
         for(int i=0;i<9;i++) {
             totalCPUTime = totalCPUTime + cpuData[1][i] - cpuData[0][i];
         }
-        float usage = cpuData[1][3]-cpuData[0][3];
-        usage = usage/totalCPUTime * 100;
+        //float usage = cpuData[1][3]-cpuData[0][3];
+        float usage =cpuData[1][4] -cpuData[0][4]+ cpuData[1][3]-cpuData[0][3];
+        usage = 100 - usage/totalCPUTime * 100;
+
         ui->listWidget->addItem( QString::number(usage));
 //        ui->label->setText( QString::number(usage) );
         flag = 0;
